@@ -2,13 +2,17 @@
 # PHC-AI Datathon Project
 
 **Description**  
-This project builds an AI-assisted system for strengthening Primary Health Care (PHC) in Nigeria (or your chosen country). The system will support:
+Welcome to the Primary Health Care for Africa AI Datathon project 🤖🤖🤖
+This project builds an AI-assisted system for strengthening Primary Health Care (PHC) in. Africa. The system will support:
 - Predicting facility patient surge  
 - Predicting medicine stock-out risks  
 - A triage assistant for symptom inputs  
 - Interactive maps and mobile prototype  
 - Dashboard for decision makers  
 
+---
+## Team
+The team for this project is the Data Sages for Africa Team which is a team of seasoned Data Experts coming together to drive impact and achieve set goals.
 ---
 
 ## Project Structure
@@ -30,17 +34,22 @@ This project builds an AI-assisted system for strengthening Primary Health Care 
 - Historic visit counts / facility reports
 - (Optional) Stock / supply data
 
-## Team & Roles
 
-- Dauda: ML + models + evaluation
-- Emmanuel: data engineering, API, deployment
-- Muhammed: geospatial, facility mapping, health logic
-- Phenny: frontend + mobile
-- Kibe: personas, slide deck, demo script
+## About the Data
 
-How to Contribute
+## License
 
-- Fork / branch
-- Create an issue for your change
-- Make changes, commit, push, open a Pull Request
-- Assign reviewers and merge when approved
+This project is subject under the MIT License
+
+## Contacts and Acknowledgments
+`Data Science and AI Expert` :- [Agbonoga Dauda (Project Technical Lead)](daudaagbonoga@gmail.com)
+
+
+
+Team members
+
+- 1
+- 2
+- 3
+
+- Special thanks to the `DataFestAfricaTema`  for providing the inspiration for this project.
