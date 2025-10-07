@@ -1,0 +1,7 @@
+pandas
+pyarrow
+duckdb
+requests
+python-dotenv
+tqdm
+PyYAML

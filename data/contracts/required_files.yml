@@ -1,0 +1,61 @@
+required:
+  clinic_visits:
+    path: data/raw/_manual/clinic_visits.csv
+    description: Historical monthly visits and resource metrics per PHC facility
+    columns:
+      - clinic_id: string
+      - month: YYYY-MM
+      - total_visits: int
+      - available_doctors: int
+      - available_nurses: int
+      - available_beds: int
+      - power_availability_days: int
+      - rainfall_mm: float
+      - avg_temperature_c: float
+      - source: string
+
+  medicine_stock:
+    path: data/raw/_manual/medicine_stock.csv
+    description: Monthly stock data for essential medicines
+    columns:
+      - clinic_id: string
+      - month: YYYY-MM
+      - item_code: string
+      - item_name: string
+      - stock_on_hand: int
+      - reorder_level: int
+      - lead_time_days: int
+      - is_high_risk_stockout: int
+      - source: string
+
+  symptom_triage:
+    path: data/raw/_manual/symptom_triage.csv
+    description: Anonymized symptom–label data for triage assistant
+    columns:
+      - triage_id: string
+      - date: YYYY-MM-DD
+      - symptoms_text: string
+      - age: int
+      - sex: string
+      - triage_label: string
+      - source: string
+
+  clinic_geo_data:
+    path: data/raw/_manual/clinic_geo_data.csv
+    description: Facility master (from HDX GeoJSON), enriched for robust joins and profiling
+    columns:
+      - clinic_id: string
+      - clinic_name: string
+      - latitude: float
+      - longitude: float
+      - state: string
+      - state_code: string          # State code
+      - lga: string                 # local government area   
+      - lga_code: string           # from 'lga' (lga_code) 
+      - ward_code: string           # from 'ward' (ward_code)
+      - ownership: string           # from functional_status (Functional/Unknown/etc.)
+      - level: string               # from 'type' (Primary/Secondary/…)
+      - category: string            # e.g., Primary Health Center
+      - timestamp: datetime         # ISO8601 from source
+      - year_recorded: int          # extracted from timestamp
+      - source: string
