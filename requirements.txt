@@ -4,3 +4,4 @@ duckdb
 requests
 python-dotenv
 tqdm
+PyYAML
