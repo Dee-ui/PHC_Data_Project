@@ -48,7 +48,7 @@ This project is subject under the MIT License
 
 Team members
 
-- 1
+- 1 `Data Engineer and Analyst` :- [Emmanuel Bolaji(Contributor)](bolajiemmanuel01@gmail.com)
 - 2
 - 3
 
