@@ -42,14 +42,20 @@ required:
 
   clinic_geo_data:
     path: data/raw/_manual/clinic_geo_data.csv
-    description: Facility master file (NHFR or equivalent)
+    description: Facility master (from HDX GeoJSON), enriched for robust joins and profiling
     columns:
       - clinic_id: string
       - clinic_name: string
       - latitude: float
       - longitude: float
       - state: string
-      - lga: string
-      - ownership: string
-      - level: string
+      - state_code: string          # State code
+      - lga: string                 # local government area   
+      - lga_code: string           # from 'lga' (lga_code) 
+      - ward_code: string           # from 'ward' (ward_code)
+      - ownership: string           # from functional_status (Functional/Unknown/etc.)
+      - level: string               # from 'type' (Primary/Secondary/…)
+      - category: string            # e.g., Primary Health Center
+      - timestamp: datetime         # ISO8601 from source
+      - year_recorded: int          # extracted from timestamp
       - source: string
