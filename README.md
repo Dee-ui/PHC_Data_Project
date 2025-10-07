@@ -49,7 +49,7 @@ This project is subject under the MIT License
 Team members
 
 - 1 `Data Engineer and Analyst` :- [Emmanuel Bolaji(Contributor)](bolajiemmanuel01@gmail.com)
-- 2
+- 2 `Data Scientist and Software Engineer` :- [Phenny Mwaisaka (Contributor)](mwaisakaphenny@gmail.com)
 - 3
 
 - Special thanks to the `DataFestAfricaTema`  for providing the inspiration for this project.
