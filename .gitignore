@@ -1,1 +1,14 @@
 .venv/
+data/raw/
+data/external/
+*.DTA
+*.zip
+*.7z
+*.rar
+*.gpkg
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.qpj
