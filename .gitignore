@@ -1,6 +1,4 @@
 .venv/
-data/raw/
-data/external/
 *.DTA
 *.zip
 *.7z
