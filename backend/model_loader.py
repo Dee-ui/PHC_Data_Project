@@ -68,13 +68,20 @@ def load_bundle(
     return ModelBundle(model=model, scaler=scaler, features=features, version=version)
 
 def prepare_features(df_in: pd.DataFrame, features: List[str], scaler: Optional[StandardScaler]) -> np.ndarray:
-    # Ensure all expected columns exist (fill missing with NaN)
     df = df_in.copy()
+
+    # Ensure every expected column exists
     for col in features:
         if col not in df.columns:
             df[col] = np.nan
-    # Reorder & restrict
-    X = df[features].astype(float).values
+
+    # Strictly keep only expected columns and coerce to numeric
+    df = df[features].apply(pd.to_numeric, errors="coerce")
+
+    # Fill any missing with 0.0 (safer for inference when scaler is absent)
+    df = df.fillna(0.0)
+
+    X = df.values
     if scaler is not None:
         X = scaler.transform(X)
     return X
