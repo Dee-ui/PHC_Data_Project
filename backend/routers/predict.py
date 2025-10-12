@@ -38,22 +38,24 @@ def predict(payload: PredictRequest):
     if BUNDLE.model is None:
         raise HTTPException(status_code=503, detail="Model not loaded")
 
+    if not BUNDLE.features:
+        raise HTTPException(
+            status_code=500,
+            detail="Model features are undefined. Ensure MODEL_META_PATH points to a JSON with a 'features' list."
+        )
+
     df = pd.DataFrame(payload.records)
-
-    # If we don’t have a declared feature list, take the current columns (not ideal).
-    features = BUNDLE.features or list(df.columns)
-
     try:
-        X = prepare_features(df, features, BUNDLE.scaler)
-        # Keras models accept numpy arrays; ensure shape [N, F]
+        X = prepare_features(df, BUNDLE.features, BUNDLE.scaler)
         yhat = BUNDLE.model.predict(X, verbose=0)
-        yhat = np.squeeze(np.asarray(yhat)).tolist()
+        yhat = np.asarray(yhat).reshape(-1).astype(float).tolist()
     except Exception as e:
+        # Return the actual error so you see it in the client while testing
         raise HTTPException(status_code=400, detail=f"Inference error: {e}")
 
     return PredictResponse(
         preds=yhat,
         model_version=BUNDLE.version,
-        n_features=len(features),
+        n_features=len(BUNDLE.features),
         used_scaler=BUNDLE.scaler is not None
     )
