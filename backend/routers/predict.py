@@ -10,7 +10,7 @@ from backend.model_loader import load_bundle, prepare_features
 router = APIRouter(prefix="/api/v1", tags=["predict"])
 
 # Load on import (process start)
-MODEL_PATH = os.getenv("MODEL_PATH", "docs/malaria_mlp_model(1).pkl")
+MODEL_PATH = os.getenv("MODEL_PATH", "docs/malaria_mlp_model.pkl")
 SCALER_PATH = os.getenv("SCALER_PATH", "backend/models/scaler_site_year.joblib")   # optional
 META_PATH   = os.getenv("MODEL_META_PATH", "backend/models/model_meta.json")       # optional
 
