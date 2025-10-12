@@ -27,6 +27,9 @@ The team for this project is the Data Sages for Africa Team which is a team of s
 - /slides ← final slides, demo script
 - README.md ← this file
 
+## Backend API
+See [backend/README.md](backend/README.md) for running, endpoints, and examples.
+
 ## Data Sources
 
 - National Health Facility Registry (clinics list)
