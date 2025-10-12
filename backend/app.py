@@ -2,8 +2,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from routers.settings import router as health_router
-from routers.predict import router as predict_router
+from backend.routers.settings import router as health_router
+from backend.routers.predict import router as predict_router
 
 app = FastAPI(title="PHC Datathon API", version="1.0")
 
