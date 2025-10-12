@@ -4,7 +4,7 @@
 **Description**  
 Welcome to the Primary Health Care for Africa AI Datathon project 🤖🤖🤖
 This project builds an AI-assisted system for strengthening Primary Health Care (PHC) in. Africa. The system will support:
-- Predicting facility patient surge  
+- Predicting Malaria Prevalence
 - Predicting medicine stock-out risks  
 - A triage assistant for symptom inputs  
 - Interactive maps and mobile prototype  
@@ -45,7 +45,7 @@ See [backend/README.md](backend/README.md) for running, endpoints, and examples.
 This project is subject under the MIT License
 
 ## Contacts and Acknowledgments
-`Data Science and AI Expert` :- [Agbonoga Dauda (Project Technical Lead)](daudaagbonoga@gmail.com)
+`Data Science and AI Development Expert` :- [Agbonoga Dauda (Project Technical Lead)](daudaagbonoga@gmail.com)
 
 
 
@@ -53,6 +53,6 @@ Team members
 
 - 1 `Data Engineer and Analyst` :- [Emmanuel Bolaji(Contributor)](bolajiemmanuel01@gmail.com)
 - 2 `Data Scientist and Software Engineer` :- [Phenny Mwaisaka (Contributor)](mwaisakaphenny@gmail.com)
-- 3
+- 3 `Data Scientist, Geospatial Data Analysis and Health Surveillance Expert` :- [Muhammed Tahir Muhammed (Contributor)](m.t.muhammed2023@gmail.com)
 
 - Special thanks to the `DataFestAfricaTema`  for providing the inspiration for this project.
