@@ -5,7 +5,7 @@ from typing import List, Dict, Any
 import os, pandas as pd, numpy as np
 
 from . import settings
-from ..model_loader import load_bundle, prepare_features
+from backend.model_loader import load_bundle, prepare_features
 
 router = APIRouter(prefix="/api/v1", tags=["predict"])
 
