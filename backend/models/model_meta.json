@@ -1,0 +1,31 @@
+{
+  "features": [
+    "All_Population_Count_2000","All_Population_Count_2005","All_Population_Count_2010","All_Population_Count_2015","All_Population_Count_2020",
+    "Aridity_2000","Aridity_2005","Aridity_2010","Aridity_2015","Aridity_2020",
+    "Day_Land_Surface_Temp_2000","Day_Land_Surface_Temp_2005","Day_Land_Surface_Temp_2010","Day_Land_Surface_Temp_2015","Day_Land_Surface_Temp_2020",
+    "Diurnal_Temperature_Range_2000","Diurnal_Temperature_Range_2005","Diurnal_Temperature_Range_2010","Diurnal_Temperature_Range_2015","Diurnal_Temperature_Range_2020",
+    "Drought_Episodes","Elevation",
+    "Enhanced_Vegetation_Index_2000","Enhanced_Vegetation_Index_2005","Enhanced_Vegetation_Index_2010","Enhanced_Vegetation_Index_2015","Enhanced_Vegetation_Index_2020",
+    "Frost_Days_2000","Frost_Days_2005","Frost_Days_2010","Frost_Days_2015","Frost_Days_2020",
+    "Global_Human_Footprint","Growing_Season_Length","Irrigation",
+    "ITN_Coverage_2000","ITN_Coverage_2005","ITN_Coverage_2010","ITN_Coverage_2015","ITN_Coverage_2020",
+    "Land_Surface_Temperature_2000","Land_Surface_Temperature_2005","Land_Surface_Temperature_2010","Land_Surface_Temperature_2015","Land_Surface_Temperature_2020",
+    "Livestock_Cattle","Livestock_Chickens","Livestock_Goats","Livestock_Pigs","Livestock_Sheep",
+    "Maximum_Temperature_2000","Maximum_Temperature_2005","Maximum_Temperature_2010","Maximum_Temperature_2015","Maximum_Temperature_2020",
+    "Mean_Temperature_2000","Mean_Temperature_2005","Mean_Temperature_2010","Mean_Temperature_2015","Mean_Temperature_2020",
+    "Minimum_Temperature_2000","Minimum_Temperature_2005","Minimum_Temperature_2010","Minimum_Temperature_2015","Minimum_Temperature_2020",
+    "Nightlights_Composite",
+    "Night_Land_Surface_Temp_2000","Night_Land_Surface_Temp_2005","Night_Land_Surface_Temp_2010","Night_Land_Surface_Temp_2015","Night_Land_Surface_Temp_2020",
+    "PET_2000","PET_2005","PET_2010","PET_2015","PET_2020",
+    "Precipitation_2000","Precipitation_2005","Precipitation_2010","Precipitation_2015","Precipitation_2020",
+    "Rainfall_2000","Rainfall_2005","Rainfall_2010","Rainfall_2015","Rainfall_2020",
+    "Temperature_January","Temperature_February","Temperature_March","Temperature_April","Temperature_May","Temperature_June","Temperature_July","Temperature_August","Temperature_September","Temperature_October","Temperature_November","Temperature_December",
+    "Travel_Times",
+    "U5_Population_2000","U5_Population_2005","U5_Population_2010","U5_Population_2015","U5_Population_2020",
+    "UN_Population_Count_2000","UN_Population_Count_2005","UN_Population_Count_2010","UN_Population_Count_2015","UN_Population_Count_2020",
+    "UN_Population_Density_2000","UN_Population_Density_2005","UN_Population_Density_2010","UN_Population_Density_2015","UN_Population_Density_2020",
+    "Wet_Days_2000","Wet_Days_2005","Wet_Days_2010","Wet_Days_2015","Wet_Days_2020"
+  ],
+  "scaler_mean": null,
+  "scaler_scale": null
+}
