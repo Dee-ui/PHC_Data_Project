@@ -13,4 +13,5 @@ services:
       TF_CPP_MIN_LOG_LEVEL: "2"
       MODEL_PATH: /app/docs/malaria_mlp_model.pkl
       MODEL_META_PATH: /app/backend/models/model_meta.json
+      MODEL_THRESHOLD: "0.6"
     restart: unless-stopped
