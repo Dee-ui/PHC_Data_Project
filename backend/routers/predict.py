@@ -52,9 +52,14 @@ def predict(payload: PredictRequest):
     except Exception as e:
         # Return the actual error so you see it in the client while testing
         raise HTTPException(status_code=400, detail=f"Inference error: {e}")
+    
+    THRESHOLD = float(os.getenv("MODEL_THRESHOLD", "0.5"))
+    labels = [1 if p >= THRESHOLD else 0 for p in yhat]
 
     return PredictResponse(
         preds=yhat,
+        labels=labels,
+        threshold=THRESHOLD,
         model_version=BUNDLE.version,
         n_features=len(BUNDLE.features),
         used_scaler=BUNDLE.scaler is not None
