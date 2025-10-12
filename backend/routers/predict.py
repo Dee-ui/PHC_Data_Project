@@ -44,9 +44,10 @@ def predict(payload: PredictRequest):
             detail="Model features are undefined. Ensure MODEL_META_PATH points to a JSON with a 'features' list."
         )
 
-    df = pd.DataFrame(payload.records)
+    df_raw = pd.DataFrame(payload.records)
+    df_canon = project_to_canonical(df_raw)
     try:
-        X = prepare_features(df, BUNDLE.features, BUNDLE.scaler)
+        X = prepare_features(df_canon, BUNDLE.features, BUNDLE.scaler)
         yhat = BUNDLE.model.predict(X, verbose=0)
         yhat = np.asarray(yhat).reshape(-1).astype(float).tolist()
     except Exception as e:

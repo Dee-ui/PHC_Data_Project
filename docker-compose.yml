@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  api:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    image: phc-backend:latest
+    container_name: phc_api
+    ports:
+      - "8000:8000"
+    environment:
+      KERAS_BACKEND: tensorflow
+      TF_CPP_MIN_LOG_LEVEL: "2"
+      MODEL_PATH: /app/docs/malaria_mlp_model.pkl
+      MODEL_META_PATH: /app/backend/models/model_meta.json
+    restart: unless-stopped

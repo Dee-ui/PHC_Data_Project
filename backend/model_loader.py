@@ -67,6 +67,52 @@ def load_bundle(
 
     return ModelBundle(model=model, scaler=scaler, features=features, version=version)
 
+def project_to_canonical(df_raw: pd.DataFrame) -> pd.DataFrame:
+    """
+    Map year-suffixed raw columns to canonical 22 features expected by the model_meta.
+    Customize the strategy as needed (by year, latest, rolling, etc.).
+    """
+    df = pd.DataFrame(index=df_raw.index)
+
+    # Example: pick “latest” year present from a fixed set
+    YEARS = [2020, 2015, 2010, 2005, 2000]
+    def pick_latest(prefix):
+        for y in YEARS:
+            col = f"{prefix}_{y}"
+            if col in df_raw.columns:
+                return df_raw[col]
+        return np.nan  # will be filled later
+
+    df["All_Population_Count"]   = pick_latest("All_Population_Count")
+    df["Aridity"]                = pick_latest("Aridity")
+    df["Day_Land_Surface_Temp"]  = pick_latest("Day_Land_Surface_Temp")
+    df["Diurnal_Temperature_Range"] = pick_latest("Diurnal_Temperature_Range")
+    df["Enhanced_Vegetation_Index"] = pick_latest("Enhanced_Vegetation_Index")
+    df["Frost_Days"]             = pick_latest("Frost_Days")
+    df["ITN_Coverage"]           = pick_latest("ITN_Coverage")
+    df["Land_Surface_Temperature"] = pick_latest("Land_Surface_Temperature")
+    df["Malaria_Incidence"]      = pick_latest("Malaria_Incidence")
+    df["Maximum_Temperature"]    = pick_latest("Maximum_Temperature")
+    df["Mean_Temperature"]       = pick_latest("Mean_Temperature")
+    df["Minimum_Temperature"]    = pick_latest("Minimum_Temperature")
+    df["Night_Land_Surface_Temp"] = pick_latest("Night_Land_Surface_Temp")
+    df["PET"]                    = pick_latest("PET")
+    df["Precipitation"]          = pick_latest("Precipitation")
+    df["Rainfall"]               = pick_latest("Rainfall")
+    df["U5_Population"]          = pick_latest("U5_Population")
+    df["UN_Population_Count"]    = pick_latest("UN_Population_Count")
+    df["UN_Population_Density"]  = pick_latest("UN_Population_Density")
+    df["Wet_Days"]               = pick_latest("Wet_Days")
+
+    # You still need to supply these two from history (can’t infer from one row)
+    if "prev_lag1" in df_raw.columns: df["prev_lag1"] = df_raw["prev_lag1"]
+    else: df["prev_lag1"] = np.nan
+    if "prev_roll3" in df_raw.columns: df["prev_roll3"] = df_raw["prev_roll3"]
+    else: df["prev_roll3"] = np.nan
+
+    return df
+
+
 def prepare_features(df_in: pd.DataFrame, features: List[str], scaler: Optional[StandardScaler]) -> np.ndarray:
     df = df_in.copy()
 
